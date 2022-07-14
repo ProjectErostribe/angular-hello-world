@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-hello-world';
+
+  constructor(private router: Router) {}
+
+  title = 'Angular Hello World';
+  name = 'Juan';
+  list = [
+    'first', 
+    'second',
+    'third',
+  ];
+  count = 0;
+
+  gotoHelloWorld(){
+    this.router.navigate(['/hello-world']);
+  }
 }
